@@ -11,7 +11,7 @@ export function Home() {
       <div className="background">
         <header>
           <div className="logoContainer">
-            <Pokeball size={"24"} color={"#fff"} />
+            <Pokeball size={"32"} color={"#fff"} />
             <h1>Pokedéx</h1>
           </div>
           <div>
