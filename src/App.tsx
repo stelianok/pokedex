@@ -1,10 +1,7 @@
-import Button from '@mui/material/Button';
+import { Home } from './pages/Home';
 
 export default function App() {
   return (
-    <div>
-      Pokedex
-      <Button variant="contained">Hi!</Button>
-    </div>
+    <Home />
   )
 }
