@@ -1,10 +1,11 @@
 import './styles.css';
 
-import { IconButton, TextField } from '@mui/material';
+import { IconButton } from '@mui/material';
+
 import { PokemonCard } from '../../components/PokemonCard';
+import { SearchBar } from '../../components/SearchBar';
 
 import Pokeball from '../../components/icons/pokeball';
-import Search from '../../components/icons/search';
 import Tag from '../../components/icons/tag';
 
 export function Home() {
@@ -17,15 +18,12 @@ export function Home() {
             <h1>Pokedéx</h1>
           </div>
           <div>
-            <div className="SearchBarContainer">
-              <Search size={"16"} color={"#fff"} />
-              <TextField variant="outlined" />
-            </div>
+            <SearchBar />
             <IconButton aria-label="filter pokemons">
-              <Tag size={"16"} color={"#fff"} />
+              <Tag size={"48"} color={"#fff"} />
             </IconButton>
           </div>
-        </header>
+        </header >
         <main>
           {/* This is a  grid */}
           <div className="pokemonGrid">
@@ -40,7 +38,7 @@ export function Home() {
             <PokemonCard />
           </div>
         </main>
-      </div>
+      </div >
     </>
   )
 }
