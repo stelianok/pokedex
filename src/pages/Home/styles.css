@@ -5,7 +5,7 @@
   flex-direction: column;
 
   width: 100vw;
-
+  height: 100vh;
 }
 
 header {
@@ -31,6 +31,11 @@ header {
 }
 
 main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: center;
+
   background-color: var(--color-grayscale-white);
 
   margin: 0px 4px;
@@ -38,4 +43,14 @@ main {
 
   padding: 24px 12px;
 
+  height: 100vh;
+
+}
+
+.pokemonGrid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 8px;
+  column-gap: 8px;
 }
