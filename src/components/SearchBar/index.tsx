@@ -1,8 +1,6 @@
-import { SearchOutlined } from "@mui/icons-material";
+import { SearchOutlined, FilterListOutlined } from "@mui/icons-material";
 import { IconButton, InputAdornment, TextField } from "@mui/material";
-
 import "./styles.css";
-import Tag from "../icons/tag";
 
 export function SearchBar() {
   return (
@@ -19,8 +17,16 @@ export function SearchBar() {
         variant="outlined"
         className="searchBar"
       />
-      <IconButton aria-label="filter pokemons">
-        <Tag size={"24"} color={"#fff"} />
+      <IconButton
+        aria-label="filter pokemons by Name"
+        sx={{
+          bgcolor: "#fff",
+          ":hover": {
+            backgroundColor: "#EFEFEF",
+          }
+        }}
+      >
+        <FilterListOutlined style={{ fontSize: 16, color: "#DC0A2D" }} />
       </IconButton>
     </div>
   )
