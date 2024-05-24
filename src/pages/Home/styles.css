@@ -1,0 +1,27 @@
+.background {
+  display: flex;
+  background-color: var(--color-identity-primary);
+  flex: 1;
+  flex-direction: column;
+
+  width: 100vw;
+
+}
+
+header {
+  color: var(--color-grayscale-white);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+
+}
+
+main {
+  background-color: var(--color-grayscale-white);
+
+  margin: 0px 4px;
+  border-radius: 8px;
+
+  padding: 24px 12px;
+
+}
