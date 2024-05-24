@@ -1,0 +1,50 @@
+.pokemonCardContainer {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-grayscale-white);
+  border-radius: 8px;
+
+  width: 108px;
+  height: 108px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pokemonAvatar {
+  width: 72px;
+  height: 72px;
+}
+
+.pokemonNumber {
+  align-self: flex-end;
+
+  padding-top: 4px;
+  padding-right: 8px;
+
+  color: var(--color-grayscale-medium);
+  font-family: "Poppins";
+  font-weight: 400;
+
+  font-size: 8px;
+  line-height: 12px;
+}
+
+.pokemonName {
+  align-self: center;
+
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+
+  color: var(--color-grayscale-dark);
+  font-family: "Poppins";
+  font-weight: 400;
+
+  font-size: 10px;
+  line-height: 16px;
+}
