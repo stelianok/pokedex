@@ -11,7 +11,7 @@ export function PokemonCard() {
         className="pokemonAvatar"
       />
       <p className="pokemonName">Ditto</p>
-      {/* <div className="grayDiv"></div> */}
+
     </div>
   )
 }
