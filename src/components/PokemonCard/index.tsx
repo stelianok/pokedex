@@ -1,5 +1,6 @@
 import './styles.css';
 import Silhouette from "../../assets/Silhouette.png";
+import { ButtonBase } from '@mui/material';
 
 interface IPokemonCardProps {
   number: string;
@@ -9,14 +10,16 @@ interface IPokemonCardProps {
 
 export function PokemonCard({ number, name, pokemonAvatarURL }: IPokemonCardProps) {
   return (
-    <div className="pokemonCardContainer">
-      <p className="pokemonNumber">#{number}</p>
-      <img
-        src={pokemonAvatarURL ?? (Silhouette)}
-        className="pokemonAvatar"
-      />
-      <p className="pokemonName">{name}</p>
+    <ButtonBase onClick={() => { console.warn(name) }}>
+      <div className="pokemonCardContainer">
+        <p className="pokemonNumber">#{number}</p>
+        <img
+          src={pokemonAvatarURL ?? (Silhouette)}
+          className="pokemonAvatar"
+        />
+        <p className="pokemonName">{name}</p>
+      </div>
+    </ButtonBase>
 
-    </div>
   )
 }

@@ -17,7 +17,7 @@ export function Home() {
   useEffect(() => {
     const getAllPokemons = async () => {
       try {
-        const response = await api.listPokemons(0, 10000);
+        const response = await api.listPokemons(0, 20);
         const allPokemon = response.results;
 
         const getAllPokemonDetails = await Promise.all(
