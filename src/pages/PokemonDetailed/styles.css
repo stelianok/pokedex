@@ -1,0 +1,22 @@
+.pokemonDetailedContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.pokeballContainer {
+  position: absolute;
+  right: 0;
+  opacity: 10%;
+}
+
+.pokemonDetailedHeader {
+  display: flex;
+
+}
+
+.pokemonNameTitle {}
