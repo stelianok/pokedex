@@ -43,7 +43,7 @@ export function Home() {
   return (
     <>
       <div className="background">
-        <header>
+        <header className="homeHeader">
           <div className="logoContainer">
             <Pokeball size={"32"} color={"#fff"} />
             <h1>Pokedéx</h1>
@@ -52,7 +52,7 @@ export function Home() {
             <SearchBar />
           </div>
         </header >
-        <main>
+        <main className="pokemonGridContainer">
           {/* This is a  grid */}
           <div className="pokemonGrid">
             {

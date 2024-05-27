@@ -8,7 +8,7 @@
   height: 100vh;
 }
 
-header {
+.homeHeader {
   color: var(--color-grayscale-white);
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -30,7 +30,7 @@ header {
 
 }
 
-main {
+.pokemonGridContainer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
