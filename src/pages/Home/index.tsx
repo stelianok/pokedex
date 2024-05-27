@@ -17,7 +17,7 @@ export function Home() {
   useEffect(() => {
     const getAllPokemons = async () => {
       try {
-        const response = await api.listPokemons(0, 20);
+        const response = await api.listPokemons(0, 100);
         const allPokemon = response.results;
 
         const getAllPokemonDetails = await Promise.all(
@@ -66,7 +66,6 @@ export function Home() {
                 <CircularProgress />
               )
             }
-
           </div>
         </main>
       </div >
