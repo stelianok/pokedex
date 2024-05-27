@@ -1,4 +1,4 @@
-import { IconButton, Divider } from "@mui/material";
+import { IconButton, Divider, } from "@mui/material";
 import { ChevronRightOutlined, ArrowBackOutlined, ChevronLeftOutlined } from "@mui/icons-material";
 
 import Weight from "../../components/icons/weight";
@@ -8,6 +8,7 @@ import Straighten from "../../components/icons/straighten";
 import Silhouette from "../../assets/Silhouette.png";
 import "./styles.css";
 import { PokemonTypeChip } from "../../components/PokemonTypeChip";
+import { PokemonStatusBar } from "../../components/PokemonStatusBar";
 
 export function PokemonDetailed() {
   const pokeType = "grass";
@@ -77,14 +78,56 @@ export function PokemonDetailed() {
             There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.
           </p>
         </div>
-        <div className="sectionContainer">
-          <p
-            className="sectionTitle"
-            style={{
-              color: `var(--color-poketype-${pokeType})`
-            }}>
-            Base Stats
-          </p>
+        <p
+          className="sectionTitle"
+          style={{
+            color: `var(--color-poketype-${pokeType})`
+          }}>
+          Base Stats
+        </p>
+        <div className="baseStatsContainer">
+          <PokemonStatusBar
+            name="HP"
+            pokeType={pokeType}
+            statValue={45}
+            maxStatValue={100}
+          />
+          <PokemonStatusBar
+            name="ATK"
+            pokeType={pokeType}
+            statValue={49}
+            maxStatValue={100}
+          />
+          <PokemonStatusBar
+            name="DEF"
+            pokeType={pokeType}
+            statValue={49}
+            maxStatValue={100}
+          />
+          <PokemonStatusBar
+            name="SATK"
+            pokeType={pokeType}
+            statValue={65}
+            maxStatValue={100}
+          />
+          <PokemonStatusBar
+            name="SDEF"
+            pokeType={pokeType}
+            statValue={65}
+            maxStatValue={100}
+          />
+          <PokemonStatusBar
+            name="SPD"
+            pokeType={pokeType}
+            statValue={65}
+            maxStatValue={100}
+          />
+          <PokemonStatusBar
+            name="SUM"
+            pokeType={pokeType}
+            statValue={432}
+            maxStatValue={500}
+          />
         </div>
       </main>
     </div>
