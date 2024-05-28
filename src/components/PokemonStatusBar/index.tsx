@@ -1,15 +1,16 @@
 import { Divider, LinearProgress, linearProgressClasses } from "@mui/material";
 
 import "./styles.css";
+import formatNumber from "../../utils/formatNumber";
 
 interface IPokemonStatusBarProps {
   name: string;
   statValue: number;
   maxStatValue: number;
-  pokeType: string;
+  pokemonType: string;
 
 }
-export function PokemonStatusBar({ name, statValue, pokeType, maxStatValue }: IPokemonStatusBarProps) {
+export function PokemonStatusBar({ name, statValue, pokemonType, maxStatValue }: IPokemonStatusBarProps) {
   // MIN = Minimum expected value
   const min = 0;
   // MAX = Maximum expected value
@@ -23,12 +24,12 @@ export function PokemonStatusBar({ name, statValue, pokeType, maxStatValue }: IP
     <div className="statContainer">
       <p
         className="statName"
-        style={{ color: `var(--color-poketype-${pokeType})` }}
+        style={{ color: `var(--color-poketype-${pokemonType})` }}
       >
         {name}
       </p>
       <Divider orientation="vertical" />
-      <p className="statValue">{statValue}</p>
+      <p className="statValue">{formatNumber(statValue, 3)}</p>
       <LinearProgress
         variant="determinate"
         value={normalise(statValue)}
@@ -38,7 +39,7 @@ export function PokemonStatusBar({ name, statValue, pokeType, maxStatValue }: IP
             backgroundColor: "#B8B8B8",
           },
           [`& .${linearProgressClasses.bar}`]: {
-            backgroundColor: `var(--color-poketype-${pokeType})`
+            backgroundColor: `var(--color-poketype-${pokemonType})`
           },
         }}
       />
