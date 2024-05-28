@@ -53,7 +53,6 @@ export function Home() {
           </div>
         </header >
         <main className="pokemonGridContainer">
-          {/* This is a  grid */}
           <div className="pokemonGrid">
             {
               !loading ? (pokemons.map((pokemon) => (
