@@ -1,20 +1,49 @@
 import './styles.css';
 import Silhouette from "../../assets/Silhouette.png";
 import { ButtonBase } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { PokemonAbility, PokemonStat, PokemonType } from 'pokenode-ts';
 
-interface IPokemonCardProps {
-  number: string;
+export interface IPokemonCardProps {
+  number: number;
   name: string;
-  pokemonAvatarURL: string | null | undefined;
+  avatarURL: string | null | undefined;
+  weight: number;
+  height: number;
+  types: PokemonType[]
+  moves: PokemonAbility[]
+  stats: PokemonStat[]
+  speciesURL: string;
 }
 
-export function PokemonCard({ number, name, pokemonAvatarURL }: IPokemonCardProps) {
+export function PokemonCard(
+  { number, name, avatarURL, weight,
+    height, types, moves, stats, speciesURL }: IPokemonCardProps) {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    const state: IPokemonCardProps = {
+      number,
+      name,
+      avatarURL,
+      weight,
+      height,
+      types,
+      moves,
+      stats,
+      speciesURL,
+    }
+
+    navigate(`pokemons/${number}`, { state });
+
+  }
+
   return (
-    <ButtonBase onClick={() => { console.warn(name) }}>
+    <ButtonBase onClick={handleNavigate}>
       <div className="pokemonCardContainer">
         <p className="pokemonNumber">#{number}</p>
         <img
-          src={pokemonAvatarURL ?? (Silhouette)}
+          src={avatarURL ?? (Silhouette)}
           className="pokemonAvatar"
         />
         <p className="pokemonName">{name}</p>

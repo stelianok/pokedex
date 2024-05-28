@@ -57,9 +57,16 @@ export function Home() {
             {
               !loading ? (pokemons.map((pokemon) => (
                 <PokemonCard
+                  key={pokemon.id}
                   name={pokemon.name}
-                  number={pokemon.id.toString()}
-                  pokemonAvatarURL={pokemon.sprites.other?.['official-artwork'].front_default}
+                  number={pokemon.id}
+                  avatarURL={pokemon.sprites.other?.['official-artwork'].front_default}
+                  weight={pokemon.weight}
+                  height={pokemon.height}
+                  moves={pokemon.abilities}
+                  stats={pokemon.stats}
+                  types={pokemon.types}
+                  speciesURL={pokemon.species.url}
                 />
               ))) : (
                 <CircularProgress />
