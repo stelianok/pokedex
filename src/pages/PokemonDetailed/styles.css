@@ -55,7 +55,10 @@
 }
 
 .pokemonImgContainer img {
-  margin-bottom: -56px;
+  margin-bottom: -50px;
+
+  width: 200px;
+  height: 200px;
 }
 
 .pokemonInfoCard {
@@ -171,4 +174,6 @@
   color: var(--color-grayscale-dark);
 
   margin-bottom: 16px;
+
+  white-space: pre-line;
 }
