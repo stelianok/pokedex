@@ -9,13 +9,14 @@ import Silhouette from "../../assets/Silhouette.png";
 import "./styles.css";
 import { PokemonTypeChip } from "../../components/PokemonTypeChip";
 import { PokemonStatusBar } from "../../components/PokemonStatusBar";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IPokemonCardProps } from "../../components/PokemonCard";
 import formatNumber from "../../utils/formatNumber";
 import { useEffect, useState } from "react";
 import api from "../../api";
 
 export function PokemonDetailed() {
+  const navigate = useNavigate();
   const location = useLocation();
   const [description, setDescription] = useState("");
   const state = location.state as IPokemonCardProps;
@@ -59,14 +60,16 @@ export function PokemonDetailed() {
 
   const primaryPokemonType = types[0].type.name;
 
-
+  const handleNavigation = () => {
+    navigate("/");
+  }
   return (
     <div className="pokemonDetailedContainer" style={{ backgroundColor: `var(--color-poketype-${primaryPokemonType})` }}>
       <div className="pokeballContainer">
         <Pokeball size={"208"} color={"#FFFFFF"} />
       </div>
       <header className="pokemonDetailedHeader">
-        <IconButton>
+        <IconButton onClick={handleNavigation}>
           <ArrowBackOutlined style={{ fontSize: 32, color: "#fff" }} />
         </IconButton>
         <h1 className="pokemonNameTitle">{name}</h1>
