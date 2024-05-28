@@ -1,12 +1,18 @@
 import { SearchOutlined, FilterListOutlined } from "@mui/icons-material";
 import { IconButton, InputAdornment, TextField } from "@mui/material";
 import "./styles.css";
+import { useState } from "react";
+
 
 export function SearchBar() {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     <div className="container">
       <TextField
         placeholder="Search"
+        onChange={(e) => { setSearchQuery(e.target.value) }}
+        value={searchQuery}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
