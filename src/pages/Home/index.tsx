@@ -17,7 +17,7 @@ export function Home() {
   useEffect(() => {
     const getAllPokemons = async () => {
       try {
-        const response = await api.listPokemons(0, 100);
+        const response = await api.listPokemons(0, 9999);
         const allPokemon = response.results;
 
         const getAllPokemonDetails = await Promise.all(
@@ -28,7 +28,7 @@ export function Home() {
         );
 
         setPokemons(getAllPokemonDetails);
-        console.log(getAllPokemonDetails);
+        // console.log(getAllPokemonDetails);
       }
       catch (error) {
         console.error('Error when retrieving pokemon data: ', error);
@@ -39,7 +39,6 @@ export function Home() {
     getAllPokemons();
   }, [])
 
-
   return (
     <>
       <div className="background">
@@ -49,7 +48,7 @@ export function Home() {
             <h1>Pokedéx</h1>
           </div>
           <div>
-            <SearchBar />
+            <SearchBar setPokemons={setPokemons} />
           </div>
         </header >
         <main className="pokemonGridContainer">
